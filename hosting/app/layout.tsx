@@ -4,7 +4,7 @@ import './Globals.css';
 import Footer from './_layout/Footer';
 import Nav from './_layout/Nav';
 
-import './firebase'
+import './_util/firebase'
 
 import { Roboto, Sofia_Sans } from 'next/font/google';
 const roboto = Roboto({
