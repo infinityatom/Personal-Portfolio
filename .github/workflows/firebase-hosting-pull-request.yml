@@ -19,6 +19,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: firebase-tools
+        uses: joinflux/firebase-tools@v10.7.0
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         env:
