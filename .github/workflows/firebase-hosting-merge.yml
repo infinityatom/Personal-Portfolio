@@ -33,3 +33,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PERSONAL_PORTFOLIO_92CFB }}'
           channelId: live
           projectId: personal-portfolio-92cfb
+          firebaseToolsVersion: 12.4.7

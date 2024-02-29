@@ -34,3 +34,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PERSONAL_PORTFOLIO_92CFB }}'
           projectId: personal-portfolio-92cfb
+          firebaseToolsVersion: 12.4.7
