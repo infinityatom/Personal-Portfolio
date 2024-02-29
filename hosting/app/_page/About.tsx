@@ -7,13 +7,10 @@ import './_About/style.css'
 import Card from './_About/Card'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 type Props = {}
 
 export default function About({ }: Props) {
-	gsap.registerPlugin(ScrollTrigger)
-
 	useGSAP(() => {
 		gsap.to('#About', {
 			scrollTrigger: {

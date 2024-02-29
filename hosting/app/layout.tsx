@@ -1,12 +1,18 @@
 
 import './Globals.css';
 
+import { Metadata, Viewport } from 'next';
+
+import SmoothScrolling from './_util/SmoothScrolling';
+
+import ClientConfig from './_util/ClientConfig';
+
+import { Roboto, Sofia_Sans } from 'next/font/google';
+
+import DevAlert from './_util/DevAlert';
 import Footer from './_layout/Footer';
 import Nav from './_layout/Nav';
 
-import './_util/firebase'
-
-import { Roboto, Sofia_Sans } from 'next/font/google';
 const roboto = Roboto({
 	variable: '--roboto',
 	weight: ['400'],
@@ -17,10 +23,6 @@ const sofia_sans = Sofia_Sans({
 	variable: '--sofia-sans',
 	subsets: ['latin']
 });
-
-import SmoothScrolling from './_util/SmoothScrolling';
-import DevAlert from './_util/DevAlert';
-import { Metadata, Viewport } from 'next';
 
 export const viewport: Viewport = {
 	width: 'device-width',
@@ -48,8 +50,9 @@ export default function RootLayout({
 	return (
 		<html lang='en' className={`${roboto.variable} ${sofia_sans.variable}`}>
 			<body>
+				<ClientConfig />
 				<SmoothScrolling>
-					{/* <DevAlert/> */}
+					<DevAlert/>
 					<Nav />
 					{children}
 					<Footer />

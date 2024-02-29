@@ -4,7 +4,6 @@ import React, { ReactNode, cloneElement, isValidElement, useRef } from 'react'
 
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import ScrollTrigger from "gsap/ScrollTrigger"
 
 import './Marquee.css'
 
@@ -22,7 +21,6 @@ export default function Marquee({ speed = 0.025, direction = -1, children }: Pro
 	let xPercent = 0;
 
 	useGSAP(() => {
-		gsap.registerPlugin(ScrollTrigger);
 		requestAnimationFrame(animation);
 
 		gsap.to(slider.current, {
