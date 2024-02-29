@@ -1,0 +1,108 @@
+#Projects {
+	--gap: clamp(1.5rem, -0.2625rem + 8.8125vw, 10.3125rem);
+	--margin: clamp(0.9375rem, 0.25rem + 3.4375vw, 4.375rem);
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap);
+
+	background-color: hsl(192, 32%, 38%);
+
+	>div {
+		display: flex;
+		padding: 0 var(--margin);
+		gap: var(--gap);
+		flex-wrap: wrap;
+
+		min-width: 0;
+
+		flex: 1 1 920px;
+
+
+		>.paragraph {
+			max-width: 50rem;
+			flex: 1 1 25rem;
+
+			>p {
+				position: sticky;
+				top: 1.5rem;
+
+				color: #E4F9F5;
+				margin: 1.5rem;
+				font-size: clamp(1.25rem, 1.05rem + 1vw, 2.25rem);
+			}
+		}
+
+		>.Card {
+			>.Content {
+				>div {
+					position: relative;
+
+					>img {
+						margin: 0;
+						display: block;
+						object-fit: contain;
+						width: 360px;
+						height: 740px;
+						margin: 0 auto;
+						object-position: top;
+					}
+				}
+			}
+
+			@media only screen and (max-width: 920px) {
+				flex-grow: 1;
+			}
+		}
+
+		&#timico {
+			flex-direction: row-reverse;
+
+			>.Card {
+				background-color: #555566;
+			}
+		}
+
+		&#home_app {
+
+			>.Card {
+				background-color: #665E55;
+			}
+		}
+
+		&#vuia_loft_apartments {
+			>.Card {
+				width: 100%;
+				width: -moz-available;
+				width: -webkit-fill-available;
+				width: fill-available;
+				width: stretch;
+
+				background-color: #556655;
+
+				>.Content {
+					background-color: #511861;
+
+
+					>div:first-child {
+						position: absolute;
+						width: 789px;
+						height: 409px;
+
+						top: -5vw;
+						left: 50vw;
+					}
+
+					>div:last-child {
+						position: absolute;
+						width: 723px;
+						height: 453px;
+
+						left: 6vw;
+						top: 1vw;
+					}
+				}
+			}
+		}
+	}
+}

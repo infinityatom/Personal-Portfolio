@@ -1,0 +1,66 @@
+#AppNav {
+	width: 100%;
+	width: -moz-available;
+	width: -webkit-fill-available;
+	width: fill-available;
+	width: stretch;
+
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+
+	font-family: var(--sofia-sans);
+	font-weight: 700;
+	white-space: nowrap;
+
+	padding: 72px 38px;
+	z-index: 1;
+
+	.Link {
+		color: white;
+
+		&[data-active] {
+			color: red;
+		}
+	}
+
+	.logo {
+		font-size: clamp(0.625rem, 0.5rem + 0.625vw, 1.25rem);
+	}
+
+	.List {
+		display: flex;
+		gap: 10px;
+
+		@media only screen {
+			@media (max-width: 50rem) {
+				display: none;
+			}
+		}
+
+		.Item {
+			.Link {
+				font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
+				border-radius: 43px;
+				padding: 6px 20px;
+				
+				&[data-active] {
+					text-decoration: 'underline';
+				}
+				
+				&:hover {
+					color: grey;
+				}
+			}
+			
+			&:last-child {
+				.Link {
+					padding: 18px 38px;
+					background-color: black;
+				}
+			}
+		}
+	}
+
+}
