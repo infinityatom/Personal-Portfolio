@@ -21,6 +21,10 @@ jobs:
           node-version: '20'
       - name: firebase-tools
         uses: joinflux/firebase-tools@v10.7.0
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         env:
