@@ -6,6 +6,8 @@ import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
 
 import './_Projects/style.css'
 import * as Card from './_Projects/Card';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 type Props = {}
 
@@ -63,6 +65,10 @@ export default function Projects({ }: Props) {
 			alert('Not supported')
 		}
 	}
+
+	useGSAP(() => {
+		// gsap.to()
+	})
 
 	return (
 		<section id='Projects'>

@@ -22,12 +22,12 @@ export default function Footer() {
 
 			<div className='version'>
 				<h3>VERSION</h3>
-				<h2>v0.0.2 © 2024</h2>
+				<h2>v0.0.3 © 2024</h2>
 			</div>
 
 			<div className='last_update'>
 				<h3>Last update</h3>
-				<h2>28/02/2024</h2>
+				<h2>1/03/2024</h2>
 			</div>
 
 		</footer>

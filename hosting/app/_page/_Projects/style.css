@@ -7,6 +7,7 @@
 	gap: var(--gap);
 
 	background-color: hsl(192, 32%, 38%);
+	padding: calc(clamp(1.0625rem, 0.3375rem + 3.625vw, 4.6875rem) + 5rem) 0;
 
 	>div {
 		display: flex;
