@@ -13,51 +13,23 @@ type Props = {}
 
 export default function About({ }: Props) {
 
-	useGSAP(() => {
-		const CardWrapper = document.querySelector('.Cards')
-		const CardSections = gsap.utils.toArray('.container')
-		const Cards = gsap.utils.toArray('.Card')
-
-		let scrollContainer = gsap.to(CardSections, {
-			xPercent: -100 * (CardSections.length - 1),
-			// ease: 'none',
-			ease: "back.inOut(0.3)",
-			
-			scrollTrigger: {
-				trigger: CardWrapper,
-				pin: true,
-				scrub: true,
-				end: '+=300%',
-				// markers: true,
-			},
-		})
-
-		// CardSections.forEach((section, index) => {
-		// 	gsap.from(Cards[index], {
-		// 		scrollTrigger: {
-		// 			containerAnimation: scrollContainer,
-		// 			trigger: section,
-		// 			start: 'right right',
-		// 			end: 'left left',
-		// 			markers: true,
-		// 			scrub: true,
-		// 		},
-		// 	})
-		// })
-	})
-
 	// useGSAP(() => {
-	// 	gsap.to('#About', {
+	// 	const CardWrapper = document.querySelector('.Cards')
+	// 	const CardSections = gsap.utils.toArray('.container')
+	// 	const Cards = gsap.utils.toArray('.Card')
+
+	// 	let scrollContainer = gsap.to(CardSections, {
+	// 		xPercent: -100 * (CardSections.length - 1),
+	// 		// ease: 'none',
+	// 		ease: "back.inOut(0.3)",
+			
 	// 		scrollTrigger: {
-	// 			trigger: '#About',
-	// 			start: 'center start',
-	// 			end: 'bottom start',
-	// 			markers: true,
-	// 			scrub: 1,
+	// 			trigger: CardWrapper,
 	// 			pin: true,
+	// 			scrub: true,
+	// 			end: '+=300%',
+	// 			// markers: true,
 	// 		},
-	// 		// scale: 0.90,
-	// 		// y: '-20svh'
 	// 	})
 	// })
 

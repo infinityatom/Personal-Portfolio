@@ -1,0 +1,22 @@
+#Skills .Card {
+	width: 376px;
+	background-color: hsla(0, 0%, 0%, 0.266);
+	padding: 5rem;
+	border-radius: 20px;
+	margin: clamp(0.9375rem, 0.25rem + 3.4375vw, 4.375rem);
+	position: relative;
+	z-index: 2;
+
+	>.title {
+		font-size: 48px;
+		font-weight: 700;
+	}
+	
+	>.description {
+		font-size: 24px;
+		font-weight: 600;
+
+		/* margin: clamp(0.9375rem, 0.25rem + 3.4375vw, 4.375rem); */
+		white-space: pre-wrap;
+	}
+}

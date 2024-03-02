@@ -3,8 +3,6 @@ import React, { FC, ForwardedRef, HTMLAttributes, ReactComponentElement, ReactEl
 import './Card.css'
 import clsx from 'clsx'
 
-import './Card.css'
-
 const Root = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>((
 	{ className, ...props }, ref
 ) => (

@@ -1,23 +1,9 @@
-/* html, body {
-	width: -moz-available;
-	width: -webkit-fill-available;
-	width: fill-available;
-	width: stretch;
-
-	height: -moz-available;
-	height: -webkit-fill-available;
-	height: fill-available;
-	height: stretch;
-
-	width: 100lvw;
-	height: 100lvh;
-} */
-
 body {
 	font-family: var(--sofia-sans);
 	background-color: hsl(0, 0%, 30%);
 	margin: 0;
 	color: white;
+	position: relative;
 }
 
 a {
