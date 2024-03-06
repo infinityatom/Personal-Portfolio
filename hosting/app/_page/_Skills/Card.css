@@ -1,19 +1,29 @@
-#Skills .Card {
-	width: 376px;
-	background-color: hsla(0, 0%, 0%, 0.266);
-	padding: 5rem;
-	border-radius: 20px;
-	margin: clamp(0.9375rem, 0.25rem + 3.4375vw, 4.375rem);
-	position: relative;
-	z-index: 2;
+#Skills {
+	.Card {
+		padding: clamp(1.5rem, 0.4839rem + 2.8226vw, 5rem);
+		margin: clamp(0.9375rem, 0.25rem + 3.4375vw, 4.375rem);
 
-	>.title {
+		border-radius: 20px;
+		position: relative;
+		z-index: 2;
+		
+		min-width: 0;
+		max-width: clamp(24rem, 13.3333rem + 16.6667vw, 40rem);
+		
+		background-color: hsla(0, 0%, 0%, 0.24);
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+	}
+
+	.title {
 		font-size: 48px;
 		font-weight: 700;
 	}
-	
-	>.description {
+
+	.description {
+		font-size: 20px;
 		font-size: 24px;
+		/* font-size: 36px; */
 		font-weight: 600;
 
 		/* margin: clamp(0.9375rem, 0.25rem + 3.4375vw, 4.375rem); */

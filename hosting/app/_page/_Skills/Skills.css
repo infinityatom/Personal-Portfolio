@@ -1,46 +1,4 @@
 #Skills {
 	padding-top: clamp(0.9375rem, 0.25rem + 3.4375vw, 4.375rem);
-	background-color: hsl(0, 0%, 30%);
-
-	#GenerativeArt {
-		position: relative;
-		min-height: 100lvh;
-		/* width: 100lvw; */
-		/* background-color: hsl(164, 63%, 36%); */
-		/* background-color: rgb(8, 95, 170); */
-		display: flex;
-
-		align-items: center;
-
-		.Card {
-			-webkit-backdrop-filter: blur(10px);
-			backdrop-filter: blur(10px);
-		}
-
-		.SplineContainer {
-			position: absolute;
-			height: 100%;
-			width: 100lvw;
-			left: 0;
-			z-index: 1;
-
-			top: 0;
-		}
-	}
-}
-
-#AppFooter {
-	min-height: 100svh;
-	margin-top: auto;
-	align-content: end;
-
-	/* background-color: hsl(170, 17%, 41%); */
-
-	>div {
-		z-index: 1;
-		position: absolute;
-		box-sizing: border-box;
-		width: 100lvw;
-		bottom: 0;
-	}
+	/* background-color: hsl(0, 0%, 30%); */
 }
