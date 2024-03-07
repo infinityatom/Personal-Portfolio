@@ -30,7 +30,6 @@ export default function ThreeD({}: Props) {
 				trigger: "#ThreeD",
 				start: "bottom bottom",
 				end: "bottom start",
-				markers: true,
 				pin: true,
 				pinSpacing: false,
 				scrub: true,

@@ -1,4 +1,7 @@
 #Skills {
+	padding-top: clamp(0.9375rem, 0.25rem + 3.4375vw, 4.375rem);
+	/* background-color: hsl(0, 0%, 30%); */
+
 	.Card {
 		padding: clamp(1.5rem, 0.4839rem + 2.8226vw, 5rem);
 		margin: clamp(0.9375rem, 0.25rem + 3.4375vw, 4.375rem);

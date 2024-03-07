@@ -1,13 +1,11 @@
 
-import './_Skills/Skills.css'
-import './_Skills/Card.css'
+import './_Skills/style.css'
 
 import GenerativeArt from './_Skills/GenerativeArt';
 import ThreeD from './_Skills/ThreeD';
 import Database from './_Skills/Database';
 import Motion from './_Skills/Motion';
 import Animation from './_Skills/Animation';
-
 
 type Props = {}
 
