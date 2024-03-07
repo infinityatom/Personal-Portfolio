@@ -24,7 +24,7 @@ export default function Page() {
 		</header>
 
 		<main id='AppMain'>
-			<About />
+			{/* <About /> */}
 			<Projects />
 			<Skills />
 		</main>

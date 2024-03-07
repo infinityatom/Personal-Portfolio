@@ -1,0 +1,63 @@
+#Database {
+	position: relative;
+	height: 100vh;
+
+
+	.ReactFlow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		color: white;
+	}
+}
+
+
+.CustomNode {
+
+	>table {
+		--color: hsla(0, 0%, 100%, 0.2);
+
+		border-spacing: 0;
+		border-radius: 3.27px;
+		overflow: hidden;
+		border: 1px solid var(--color);
+
+		& td, th {
+			padding: 5px 10px;
+		}
+
+		>thead {
+			font-family: var(--work_sans);
+			font-size: 10.46px;
+			text-align: left;
+
+			background-color: var(--color);
+		}
+
+		>tbody {
+			font-family: var(--ibm_plex_mono);
+
+			& tr:not(:last-child)>td {
+				border-bottom: 1px solid var(--color);
+			}
+
+			>tr {
+				font-size: 9.15px;
+
+				>td.type {
+					color: #F17400;
+
+					&[data-type="int"] {
+						color: #EFC900;
+					}
+
+					&[data-type="date"] {
+						color: #00D0AB;
+					}
+				}
+			}
+		}
+	}
+}
