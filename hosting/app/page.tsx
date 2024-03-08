@@ -23,6 +23,10 @@ export default function Page() {
 			</Marquee>
 		</header>
 
+		<Marquee direction={1}>
+				<h1>Bodnarescu Riccardo -</h1>
+			</Marquee>
+
 		<main id='AppMain'>
 			<About />
 			<Projects />

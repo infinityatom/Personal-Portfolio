@@ -36,10 +36,12 @@ export default function Marquee({
 				scrub: 0.25,
 				onUpdate: e => direction = e.direction * d
 			},
-			x: `+=${scrollSpeed*d}px`
+			x: `+=${scrollSpeed * d}px`
 		})
-		gsap.set(first.current, { x: scrollSpeed*d*-1 })
-		gsap.set(second.current, { x: scrollSpeed*d*-1 })
+		if (d > 0) {
+			gsap.set(first.current, { x: scrollSpeed * -1 })
+			gsap.set(second.current, { x: scrollSpeed * -1 })
+		}
 	}, [slider])
 
 	function animation() {
@@ -52,7 +54,7 @@ export default function Marquee({
 			if (xPercent <= -100) {
 				xPercent += 100;
 			}
-	
+
 			if (xPercent >= 0) {
 				xPercent -= 100;
 			}
@@ -62,7 +64,7 @@ export default function Marquee({
 			if (xPercent >= 0) {
 				xPercent -= 100;
 			}
-	
+
 			if (xPercent <= -100) {
 				xPercent += 100;
 			}
