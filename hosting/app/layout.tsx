@@ -74,7 +74,7 @@ export default function RootLayout({
 			<body>
 				<ClientConfig />
 				<SmoothScrolling>
-					{/* <DevAlert/> */}
+					<DevAlert/>
 					<Nav />
 					{children}
 					<Footer />

@@ -15,12 +15,14 @@
 		left: 0;
 		z-index: 1;
 
+		pointer-events: none;
+
 		top: 0;
 	}
 }
 
 #AppFooter {
-	min-height: 100svh;
+	min-height: 100lvh;
 	margin-top: auto;
 	align-content: end;
 

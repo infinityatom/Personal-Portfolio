@@ -1,0 +1,28 @@
+#Programming {
+
+	>.Marquee {
+		padding: 40px;
+
+		.images {
+			display: flex;
+			overflow: hidden;
+
+			.logos {
+				margin: 0 1.5rem;
+			}
+		}
+	}
+
+	> .title {
+		text-align: center;
+	}
+
+	> .description {
+		font-size: clamp(1.25rem, 0.9167rem + 1.4815vw, 2.25rem);
+		/* background-color: rebeccapurple; */
+		max-width: 20em;
+		margin: 2rem auto;
+		text-align: center;
+		text-wrap: balance;
+	}
+}

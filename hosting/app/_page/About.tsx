@@ -46,7 +46,7 @@ export default function About({ }: Props) {
 				<p>I'm looking for new challenges in a creative agency or freelance projects to use & develop my skills.</p>
 			</div>
 
-			<div className='Cards'>
+			{/* <div className='Cards'>
 				<div className="container">
 					<Card title='Front-end' number='01' description='Proficient in HTML, CSS, and JavaScript, with expertise in creating visually appealing and user-friendly web interfaces using frameworks like React.js and Vue.js.' />
 				</div>
@@ -59,7 +59,7 @@ export default function About({ }: Props) {
 				<div className="container">
 					<Card title='Adaptable' number='04' description='Well-versed in essential development tools like Git and GitHub, with a strong understanding of DevOps, Agile methodologies, testing practices, and cloud services, while prioritizing security best practices throughout the development process.' />
 				</div>
-			</div>
+			</div> */}
 
 			{/* <div className='Cards'>
 				<Card title='Front-end' number='01' description='Proficient in HTML, CSS, and JavaScript, with expertise in creating visually appealing and user-friendly web interfaces using frameworks like React.js and Vue.js.' />

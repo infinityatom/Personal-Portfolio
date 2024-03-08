@@ -28,8 +28,8 @@ export default function ThreeD({}: Props) {
 			ease: 'power4.in',
 			scrollTrigger: {
 				trigger: "#ThreeD",
-				start: "bottom bottom",
-				end: "bottom start",
+				start: "clamp(bottom bottom)",
+				end: "clamp(bottom start)",
 				pin: true,
 				pinSpacing: false,
 				scrub: true,
@@ -53,6 +53,7 @@ export default function ThreeD({}: Props) {
 					<Spline
 						className='Spline'
 						scene="https://prod.spline.design/q8kMFB4IxJasfwON/scene.splinecode"
+						// scene='/animations/vaporwave_background.spline'
 						onLoad={onLoadSpline}
 					/>
 				</div>
