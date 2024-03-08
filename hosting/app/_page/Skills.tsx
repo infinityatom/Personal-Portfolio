@@ -15,9 +15,9 @@ export default function Skills({ }: Props) {
 		<section id='Skills'>
 			<Motion/>
 			<Database/>
-			{/* <Animation/> */}
+			<Animation/>
 			{/* <GenerativeArt/> */}
-			{/* <ThreeD/> */}
+			<ThreeD/>
 		</section>
 	</>
 }

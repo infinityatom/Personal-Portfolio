@@ -1,12 +1,16 @@
-import { Handle, Position } from 'reactflow';
+import { Handle, HandleType, Position } from 'reactflow';
 
+import './CustomNode.css'
+
+type CustomHandle = {
+	position: 'left' | 'right'
+	type: HandleType
+}
 
 export type DiagramTableRow = {
 	name: string;
 	type: string;
-	handle_left?: boolean;
-	handle_right?: boolean;
-	handle?: Array<typeof Handle>;
+	handlers?: CustomHandle[];
 }
 
 export type DiagramTable = {
@@ -27,24 +31,36 @@ function CustomNode({ data }: { data: DiagramTable }) {
 				<tbody>
 					{data.rows.map(row =>
 						<tr className="row" key={row.name}>
-							<td className="name">{row.name}</td>
-							<td className="type" data-type={row.type}>{row.type}</td>
+							<td className="name">
+								{row.handlers && row.handlers.map((handle, i) => {
+									if (handle.position == 'left') {
+										return <Handle
+											type={handle.type}
+											position={Position.Left}
+											id={row.name + '-left'}
+											key={i}
+										/>
+									}
+								})}
+								{row.name}
+							</td>
+							<td className="type" data-type={row.type}>
+								{row.handlers && row.handlers.map((handle, i) => {
+									if (handle.position == 'right') {
+										return <Handle
+											type={handle.type}
+											position={Position.Right}
+											id={row.name + '-right'}
+											key={i}
+										/>
+									}
+								})}
+								{row.type}
+							</td>
 						</tr>
 					)}
 				</tbody>
 			</table>
-			{data.rows.map(row =>
-				<div key={row.name}>
-					{row.handle_left === true && <>
-						<Handle type="source" position={Position.Left} id='sl' />
-						<Handle type="target" position={Position.Left} id='tl' />
-					</>}
-					{row.handle_right === true && <>
-						<Handle type="source" position={Position.Right} id='sr' />
-						<Handle type="target" position={Position.Right} id='tr' />
-					</>}
-				</div>
-			)}
 		</div>
 	);
 }

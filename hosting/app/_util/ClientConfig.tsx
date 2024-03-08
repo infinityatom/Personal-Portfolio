@@ -14,7 +14,9 @@ import { getAnalytics } from "firebase/analytics";
 
 export default function ClientConfig() {
 	useEffect(() => {
-		const analytics = getAnalytics(FirebaseApp);
+		// if (process.env.NODE_ENV === "development") {
+			getAnalytics(FirebaseApp);
+		// }
 	})
 
 	useGSAP(() => {
