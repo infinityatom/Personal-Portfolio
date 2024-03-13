@@ -21,7 +21,7 @@
 	}
 }
 
-#AppFooter {
+:has(#ThreeD) #AppFooter {
 	min-height: 100lvh;
 	margin-top: auto;
 	align-content: end;

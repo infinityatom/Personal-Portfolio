@@ -1,0 +1,111 @@
+.Timico {
+	background: linear-gradient(#020202 9%, #4d4d5d 61%, #464653 91%, #555566 98%);
+
+	>main {
+		overflow: hidden;
+
+		>div {
+			position: relative;
+
+			>img {
+				object-fit: contain;
+			}
+
+			&:nth-child(1) {
+				margin-top: 3rem;
+				width: 100%;
+				aspect-ratio: 526 / 570;
+				border-bottom: 10px solid black;
+			}
+
+			&:nth-child(2) {
+				margin-top: 3rem;
+				height: 100svw;
+			}
+
+			&:nth-child(3) {
+				margin-top: 3rem;
+				height: 100svw;
+			}
+
+			&:nth-child(4) {
+				margin-left: 5rem;
+				margin-top: 3rem;
+				height: 100svw;
+
+				>img {
+					margin-left: 20vw;
+					object-fit: cover;
+					object-position: left;
+				}
+			}
+
+			&:nth-child(5) {
+				margin-bottom: 3rem;
+				height: 100svw;
+			}
+
+			@media only screen and (min-width: 800px) {
+				&:nth-child(1) {
+					width: 50lvw;
+					box-sizing: border-box;
+					border: 10px solid black;
+					border-radius: 5vw;
+					overflow: hidden;
+					margin-left: 4rem;
+
+					>img {
+						background-color: hsla(240, 41%, 27%, 0.25);
+						padding-top: 3vw;
+					}
+
+					float: left;
+				}
+
+				&:nth-child(2) {
+					width: calc(50lvw - 5rem);
+					margin-top: 5rem;
+					float: right;
+					height: 50vw;
+
+					>img {
+						padding: 2rem 0;
+						box-sizing: border-box;
+					}
+				}
+
+				&:nth-child(3) {
+					clear: both;
+					box-sizing: border-box;
+					float: left;
+					width: 65vw;
+
+					>img {
+						padding-top: 3vw;
+					}
+				}
+
+				&:nth-child(4) {
+					float: right;
+					width: 70lvw;
+					margin-top: -120vw;
+					margin-right: -30vw;
+
+					>img {
+						margin-left: 0;
+						object-fit: contain;
+						object-position: left;
+					}
+				}
+
+				&:nth-child(5) {
+					margin-top: -50vw;
+					height: 80vw;
+					width: 50vw;
+					margin-right: 2rem;
+					float: right;
+				}
+			}
+		}
+	}
+}

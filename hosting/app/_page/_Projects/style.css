@@ -34,7 +34,7 @@
 			}
 		}
 
-		>.Card {
+		.Card {
 			>.Content {
 				>div {
 					position: relative;
@@ -59,20 +59,20 @@
 		&#timico {
 			flex-direction: row-reverse;
 
-			>.Card {
+			.Card {
 				background-color: #555566;
 			}
 		}
 
 		&#home_app {
 
-			>.Card {
+			.Card {
 				background-color: #665E55;
 			}
 		}
 
 		&#vuia_loft_apartments {
-			>.Card {
+			.Card {
 				width: 100%;
 				width: -moz-available;
 				width: -webkit-fill-available;

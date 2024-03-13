@@ -26,12 +26,15 @@ export default function Nav() {
 			force: false,
 		};
 
-		const href = event.currentTarget.getAttribute('href');
+		let href = event.currentTarget.getAttribute('href');
 
-		if (href == '#') {
+		if (href == '#' || href == '/') {
 			lenisInstance.scrollTo(0, scrollToOptions);
 		} else {
+			if( href.charAt(0) === '/' )
+			href = href.slice(1);
 			lenisInstance.scrollTo(href, scrollToOptions);
+			console.log(href)
 		}
 	}
 
@@ -49,26 +52,26 @@ export default function Nav() {
 	// });
 
 	return (
-		<NavMenu.Root className='NavRoot' orientation='horizontal' id='AppNav'>
+		<NavMenu.Root className='AppNav' orientation='horizontal'>
 
 			<NavMenu.Link asChild>
-				<Link className='logo Link' scroll={false} onClick={scrollTo} href='#'>© Coded by Riccardo</Link>
+				<Link className='logo Link' scroll={false} onClick={scrollTo} href='/'>© Coded by Riccardo</Link>
 			</NavMenu.Link>
 
 			<NavMenu.List className='List'>
 				<NavMenu.Item className='Item'>
 					<NavMenu.Link asChild>
-						<Link className='Link' scroll={false} onClick={scrollTo} href='#About'>About</Link>
+						<Link className='Link' scroll={false} onClick={scrollTo} href='/#About'>About</Link>
 					</NavMenu.Link>
 				</NavMenu.Item>
 				<NavMenu.Item className='Item'>
 					<NavMenu.Link asChild>
-						<Link className='Link' scroll={false} onClick={scrollTo} href='#Projects'>Projects</Link>
+						<Link className='Link' scroll={false} onClick={scrollTo} href='/#Projects'>Projects</Link>
 					</NavMenu.Link>
 				</NavMenu.Item>
 				<NavMenu.Item className='Item'>
 					<NavMenu.Link asChild>
-						<Link className='Link' scroll={false} onClick={scrollTo} href='#Skills'>Skills</Link>
+						<Link className='Link' scroll={false} onClick={scrollTo} href='/#Skills'>Skills</Link>
 					</NavMenu.Link>
 				</NavMenu.Item>
 				<NavMenu.Item className='Item'>

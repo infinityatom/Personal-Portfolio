@@ -26,10 +26,10 @@ export default function Marquee({
 	const slider = useRef(null);
 	let xPercent = 0;
 	let d = direction
+	// let requestId = undefined;
+	const requestId = useRef(null);
 
 	useGSAP(() => {
-		requestAnimationFrame(animation);
-
 		gsap.to(slider.current, {
 			scrollTrigger: {
 				trigger: slider.current,
@@ -38,11 +38,18 @@ export default function Marquee({
 			},
 			x: `+=${scrollSpeed * d}px`
 		})
+		
 		if (d > 0) {
 			gsap.set(first.current, { x: scrollSpeed * -1 })
 			gsap.set(second.current, { x: scrollSpeed * -1 })
 		}
-	}, [slider])
+
+		requestId.current = requestAnimationFrame(animation);
+
+		return () => {
+			cancelAnimationFrame(requestId.current);
+		};
+	}, [])
 
 	function animation() {
 		gsap.set(first.current, { xPercent: xPercent })
@@ -70,8 +77,7 @@ export default function Marquee({
 			}
 		}
 
-
-		requestAnimationFrame(animation);
+		requestId.current = requestAnimationFrame(animation);
 	}
 
 	return (

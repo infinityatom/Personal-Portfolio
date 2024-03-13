@@ -74,7 +74,7 @@ export default function Projects({ }: Props) {
 			{/* <button type="button" onClick={requestDeviceOrientation}>Grant acces</button> */}
 
 			<div id='timico'>
-				<Card.Root>
+				<Card.Root href='/timico'>
 					<Card.Header>
 						<Card.Title>Timico</Card.Title>
 						<Card.Subtitle>Flutter</Card.Subtitle>
@@ -97,7 +97,7 @@ export default function Projects({ }: Props) {
 				</div>
 			</div>
 			<div id='home_app'>
-				<Card.Root>
+				<Card.Root href='/home_app'>
 					<Card.Header>
 						<Card.Title>Home app</Card.Title>
 						<Card.Subtitle>SwiftUI</Card.Subtitle>
@@ -120,7 +120,7 @@ export default function Projects({ }: Props) {
 				</div>
 			</div>
 			<div id='vuia_loft_apartments'>
-				<Card.Root>
+				<Card.Root href='/vuia_loft_apartments'>
 					<Card.Header>
 						<Card.Title>Vuia loft apartments</Card.Title>
 						<Card.Subtitle>React</Card.Subtitle>

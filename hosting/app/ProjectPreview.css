@@ -1,0 +1,44 @@
+.ProjectPreview {
+	>header {
+		position: relative;
+		padding-top: 3rem;
+		padding-right: 38px;
+		padding-left: 3rem;
+
+
+		>h1 {
+			font-size: clamp(2.25rem, 1.3909rem + 3.8182vw, 7.5rem);
+		}
+
+		>dl {
+			display: flex;
+			margin: 0;
+
+			max-width: 100%;
+			flex-direction: row;
+			column-gap: clamp(2rem, -3.0909rem + 14.5455vw, 10rem);
+
+			@media only screen and (max-width: 35rem) {
+				flex-direction: column;
+			}
+
+			>div {
+				>dt {
+					font-size: clamp(1.25rem, 1.0909rem + 0.7073vw, 2.2225rem);
+					margin-top: clamp(1.25rem, 1.0909rem + 0.7073vw, 2.2225rem);
+					opacity: .6;
+				}
+
+				>dd {
+					margin: 0;
+					font-size: clamp(1.5rem, 1.3159rem + 0.8182vw, 2.625rem);
+				}
+			}
+		}
+	}
+}
+
+:has(.ProjectPreview) .logo.Link {
+	opacity: 0;
+	pointer-events: none;
+}

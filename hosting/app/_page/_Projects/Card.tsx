@@ -1,16 +1,23 @@
-import React, { FC, ForwardedRef, HTMLAttributes, ReactComponentElement, ReactElement, ReactNode, forwardRef } from 'react'
+import React, { ForwardedRef, HTMLAttributes, forwardRef } from 'react'
 
 import './Card.css'
 import clsx from 'clsx'
+import Link from 'next/link'
+import { UrlObject } from 'url'
 
-const Root = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>((
-	{ className, ...props }, ref
+interface Props extends HTMLAttributes<HTMLElement> {
+	href: string | UrlObject,
+}
+
+const Root = ((
+	{ className, href, ...props }: Props,
 ) => (
-	<article
-		ref={ref}
-		className={clsx('Card', className)}
-		{...props}
-	/>
+	<Link className='link' href={href}>
+		<article
+			className={clsx('Card', className)}
+			{...props}
+		/>
+	</Link>
 ))
 
 const Header = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>((

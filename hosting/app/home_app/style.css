@@ -1,0 +1,21 @@
+.HomeApp {
+
+	>main {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		gap: 5rem;
+
+		>div {
+			height: 700px;
+			position: relative;
+
+			>img {
+				object-fit: contain;
+			}
+		}
+	}
+
+	background-color: #665E55;
+}
