@@ -1,10 +1,47 @@
 'use client'
 
-import Rive, { Alignment, Layout } from '@rive-app/react-canvas'
+import Rive, { useRive, useStateMachineInput } from '@rive-app/react-canvas'
 
 import './Animation.css'
 
+import { useGSAP } from '@gsap/react'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
 export default function Animation() {
+
+	const { rive: skeleton, RiveComponent: SkeletonComponent } = useRive({
+		src: '/animations/animations.riv',
+		artboard: 'Boo-skeleton',
+		stateMachines: 'default',
+		shouldDisableRiveListeners: true,
+		autoplay: true
+	});
+
+	const skeletonAnimation = useStateMachineInput(skeleton, 'default', 'hidden', true)
+
+	const { rive: jigglyPuff, RiveComponent: JigglyPuffComponent } = useRive({
+		src: '/animations/animations.riv',
+		artboard: 'Jiggly-puff',
+		stateMachines: 'default',
+		shouldDisableRiveListeners: true,
+		autoplay: true
+	});
+	const jigglyPuffPressed = useStateMachineInput(jigglyPuff, 'default', 'touched');
+
+	useGSAP(() => {
+		ScrollTrigger.create({
+			trigger: '.skeleton',
+			start: 'bottom bottom',
+			end: 'bottom top',
+			markers: true,
+			onToggle: (event) => {
+				if (skeletonAnimation) {
+					skeletonAnimation.value = !event.isActive
+				}
+			}
+		});
+	}, [skeletonAnimation])
+
 	return (
 		<article id='Animation'>
 			<div className="Card">
@@ -18,19 +55,10 @@ export default function Animation() {
 					shouldDisableRiveListeners={true}
 				/>
 			</div>
-			<Rive
-				src='/animations/animations.riv'
-				artboard='Boo-skeleton'
-				stateMachines='default'
-				className='skeleton'
-				shouldDisableRiveListeners={true}
-			/>
-			<Rive
-				src='/animations/animations.riv'
-				artboard='Jiggly-puff'
-				stateMachines='default'
+			<SkeletonComponent className='skeleton' />
+			<JigglyPuffComponent
 				className='jiggly-puff'
-				shouldDisableRiveListeners={true}
+				onClick={() => jigglyPuffPressed.fire()}
 			/>
 		</article>
 	)
