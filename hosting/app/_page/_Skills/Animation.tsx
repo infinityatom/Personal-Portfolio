@@ -33,7 +33,6 @@ export default function Animation() {
 			trigger: '.skeleton',
 			start: 'bottom bottom',
 			end: 'bottom top',
-			markers: true,
 			onToggle: (event) => {
 				if (skeletonAnimation) {
 					skeletonAnimation.value = !event.isActive
