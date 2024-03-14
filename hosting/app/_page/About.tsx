@@ -1,5 +1,6 @@
 'use client'
 
+
 import React, { useRef } from 'react'
 
 import './_About/style.css'
@@ -8,10 +9,38 @@ import Card from './_About/Card'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import CustomEase from 'gsap/CustomEase'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SplitType from 'split-type'
 
 type Props = {}
 
 export default function About({ }: Props) {
+
+	const infoRef = useRef<HTMLDivElement>(null)
+
+	// useGSAP(() => {
+	// 	let tl = gsap.timeline({
+	// 		scrollTrigger: {
+	// 			markers: true,
+	// 			trigger: infoRef.current,
+	// 			// pin: true,
+	// 			// start: "top top",
+	// 			// end: "+=500",
+	// 			start: 'top bottom',
+	// 			// end: 'bottom top',
+	// 			scrub: true,
+	// 		},
+	// 	});
+
+	// 	tl.from(
+	// 		'h1, p',
+	// 		{
+	// 			stagger: 0.5,
+	// 			y: 150,
+	// 			ease: 'power4.inOut',
+	// 		}
+	// 	)
+	// }, { scope: infoRef })
 
 	// useGSAP(() => {
 	// 	const CardWrapper = document.querySelector('.Cards')
@@ -22,7 +51,7 @@ export default function About({ }: Props) {
 	// 		xPercent: -100 * (CardSections.length - 1),
 	// 		// ease: 'none',
 	// 		ease: "back.inOut(0.3)",
-			
+
 	// 		scrollTrigger: {
 	// 			trigger: CardWrapper,
 	// 			pin: true,
@@ -33,17 +62,31 @@ export default function About({ }: Props) {
 	// 	})
 	// })
 
+	// useGSAP(() => {
+	// 	let paragraphs = gsap.utils.toArray<HTMLHeadingElement>('.paragraphTriggers')
+
+	// 	paragraphs.forEach(paragraph => {
+	// 		ScrollTrigger.create({
+	// 			trigger: paragraph,
+	// 			markers: true
+	// 		})
+	// 	});
+	// })
+
 	return (
 		<section id='About'>
-			<div>
-				<h1>I am Passionate</h1>
-				<p>"I put my heart and my soul into my work" and always willing to go the extra mile to deliver the best result.</p>
+			<div className='info' ref={infoRef}>
+				<Paragraph title='I am Passionate'>
+					"I put my heart and my soul into my work" and always willing to go the extra mile to deliver the best result.
+				</Paragraph>
 
-				<h1>Creative</h1>
-				<p>I love to create interactive and immersive experiences using WebGL, GSAP, Three.js, and more.</p>
+				<Paragraph title='Creative'>
+					I love to create interactive and immersive experiences using WebGL, GSAP, Three.js, and more.
+				</Paragraph>
 
-				<h1>Developer</h1>
-				<p>I'm looking for new challenges in a creative agency or freelance projects to use & develop my skills.</p>
+				<Paragraph title='Developer'>
+					I'm looking for new challenges in a creative agency or freelance projects to use & develop my skills.
+				</Paragraph>
 			</div>
 
 			{/* <div className='Cards'>
@@ -70,4 +113,59 @@ export default function About({ }: Props) {
 
 		</section>
 	)
+}
+
+type ParagraphProps = {
+	title: string
+	children: string
+}
+
+function Paragraph({ title, children }: ParagraphProps) {
+
+	const titleRef = useRef(null)
+	const descriptionRef = useRef(null)
+
+	useGSAP(() => {
+		const splitTitle = new SplitType(titleRef.current, { types: 'words,chars' })
+
+		gsap.from('.char', {
+			opacity: 0,
+			stagger: 0.05,
+			yPercent: 50,
+			ease: 'back.out(2)',
+			scrollTrigger: {
+				trigger: descriptionRef.current,
+				start: 'top bottom',
+				end: 'bottom top',
+				toggleActions: 'play reverse play reverse',
+			},
+		})
+	}, { scope: titleRef })
+
+	useGSAP(() => {
+		const splitDescription = new SplitType(descriptionRef.current, { types: 'words,chars' })
+
+		gsap.from('.char', {
+			opacity: 0,
+			stagger: 0.01,
+			xPercent: 150,
+			duration: 0.2,
+			ease: 'power2.out',
+			scrollTrigger: {
+				trigger: descriptionRef.current,
+				start: 'top 70%',
+				end: 'bottom 15%',
+				toggleActions: 'play reverse play reverse',
+			},
+		})
+	}, { scope: descriptionRef })
+
+	return <>
+		<h1 ref={titleRef} >
+			{title}
+		</h1>
+		<p ref={descriptionRef}>
+			{children}
+		</p>
+	</>
 }
